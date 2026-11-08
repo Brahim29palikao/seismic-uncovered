@@ -101,7 +101,70 @@
 <section id="lab"><div class="section-head"><div class="kicker" data-i="labK">03 — Interactive security lab</div><h2 data-i="labH">Privacy footguns: test your assumptions.</h2><p data-i="labP">Explore common patterns that can leak information even when sensitive values use shielded types. These are simplified, fictional demonstrations — not live chain simulations.</p></div><div class="lab"><div class="tabs" id="labTabs"><button class="tab active" data-tab="branch" data-i="tabBranch">Conditional branches</button><button class="tab" data-tab="loop" data-i="tabLoop">Dynamic loops</button><button class="tab" data-tab="getter" data-i="tabGetter">Public getters</button><button class="tab" data-tab="calldata" data-i="tabCalldata">Plain calldata</button><button class="tab" data-tab="literal" data-i="tabLiteral">Hardcoded values</button></div><div class="labbody"><div><h3 id="labTitle">A branch can reveal a secret through gas.</h3><p id="labDesc">If execution takes measurably different paths depending on a shielded value, gas usage may reveal information about that value.</p><div class="code" id="labCode"><span class="comment">// Risky pattern (illustrative)</span><br><span class="kw">if</span> (secretAmount &gt; threshold) {<br>&nbsp;&nbsp;performMoreWork();<br>} <span class="kw">else</span> {<br>&nbsp;&nbsp;performLessWork();<br>}</div></div><div><div class="explain"><strong data-i="tryIt">Try the model</strong><div id="labControl" class="switchrow"><label><input id="secretToggle" type="checkbox"> Secret condition is true</label></div><div class="result" id="labResult" aria-live="polite">Observed gas profile: higher-work path. The branch outcome may be inferable from public execution metadata.</div></div><p id="labTip">Safer direction: avoid secret-dependent public control flow where possible; use constant-work designs and review observable execution behavior.</p></div></div></div></section>
 <section id="signed"><div class="section-head"><div class="kicker" data-i="signedK">04 — Authenticated data access</div><h2 data-i="signedH">Signed Reads: who is asking matters.</h2><p data-i="signedP">A conventional <code>eth_call</code> is a simulation request and may not prove the identity of the reader. Seismic Signed Reads are designed to authenticate the requester and allow a response to be encrypted to the client's key.</p></div><div class="compare"><article class="card"><span class="tag">eth_call</span><h3 data-i="ethCallH">Ordinary read</h3><ul><li data-i="ethCall1">A read-only call simulation.</li><li data-i="ethCall2">The caller identity may be absent or not authenticated in the way an application needs.</li><li data-i="ethCall3">Returned data is not inherently encrypted to a verified reader.</li></ul></article><article class="card" style="border-color:#6de3e055"><span class="tag">Signed Read</span><h3 data-i="signedReadH">Authenticated read</h3><ul><li data-i="signedRead1">The request carries a signature tied to the reader.</li><li data-i="signedRead2">The contract can verify who is requesting protected data.</li><li data-i="signedRead3">The response can be encrypted for the client's key.</li></ul></article></div><p class="micro" data-i="signedNote">Implementation details and supported flows should always be checked against the current official documentation.</p></section>
 <section id="crypto"><div class="section-head"><div class="kicker" data-i="cryptoK">05 — Cryptographic building blocks</div><h2 data-i="cryptoH">From shared secret to authenticated ciphertext.</h2><p data-i="cryptoP">The documented flow uses established cryptographic primitives for key agreement, key derivation, and authenticated encryption.</p></div><div class="grid"><article class="card"><span class="tag">01 · Key agreement</span><h3>ECDH</h3><p data-i="ecdhP">Elliptic-curve Diffie–Hellman allows two parties to derive a shared secret using their key material.</p><div class="formula">Shared secret ← ECDH(private, public)</div></article><article class="card"><span class="tag">02 · Key derivation</span><h3>HKDF-SHA256</h3><p data-i="hkdfP">HKDF derives purpose-specific cryptographic key material from the shared secret and context.</p><div class="formula">Key ← HKDF-SHA256(secret, salt, info)</div></article><article class="card"><span class="tag">03 · Authenticated encryption</span><h3>AES-256-GCM</h3><p data-i="aesP">AES-GCM encrypts data and authenticates it, detecting unauthorized modification of ciphertext.</p><div class="formula">Ciphertext + tag ← AES-256-GCM(key, nonce)</div></article></div></section>
-<section id="quiz"><div class="section-head"><div class="kicker" data-i="quizK">06 — Check your understanding</div><h2 data-i="quizH">Can you spot the privacy leak?</h2><p data-i="quizP">A short knowledge check. The examples are conceptual and use no real accounts, keys, or transactions.</p></div><div class="card" style="max-width:760px"><div class="quizq" id="question">Which pattern can reveal information about a shielded value?</div><div class="answers" id="answers"></div><div class="feedback" id="feedback" aria-live="polite"></div><div class="quiznav"><span class="micro" id="qProgress">Question 1 / 4</span><button class="smallbtn" id="nextQ" type="button" disabled>Next question →</button></div></div></section>
+<section id="simulator">
+  <div class="section-head">
+    <div class="kicker" data-sim="kicker">04 — Interactive transaction lab</div>
+    <h2 data-sim="title">See what a private transaction reveals.</h2>
+    <p data-sim="intro">
+      Compare an ordinary transaction with a conceptual shielded transaction.
+      All values are fictional and simulated locally.
+    </p>
+  </div>
+
+  <div class="tx-sim">
+    <div class="tx-grid">
+      <div class="tx-panel">
+        <span class="tag" data-sim="inputTag">TRANSACTION INPUT</span>
+        <h3 data-sim="configure">Configure your transaction</h3>
+
+        <label class="tx-field">
+          <span data-sim="amountLabel">Transfer amount</span>
+          <input id="txAmount" type="number" min="1"
+            max="1000000" value="250" step="1">
+        </label>
+
+        <label class="tx-field">
+          <span data-sim="recipientLabel">Fictional recipient</span>
+          <input id="txRecipient" type="text"
+            value="0xDEMO...7A21" maxlength="42">
+        </label>
+
+        <label class="tx-field">
+          <span data-sim="modeLabel">Transaction mode</span>
+          <select id="txMode">
+            <option value="public" data-sim="publicOption">
+              Ordinary transaction
+            </option>
+            <option value="shielded" data-sim="shieldOption">
+              Conceptual shielded transaction
+            </option>
+          </select>
+        </label>
+
+        <button class="tx-run" id="txRun" type="button"
+          data-sim="run">Simulate transaction ↗</button>
+
+        <p class="tx-note" data-sim="localNote">
+          Local demonstration only. No wallet, blockchain or network connection.
+        </p>
+      </div>
+
+      <div class="tx-panel">
+        <span class="tag" data-sim="outputTag">SIMULATION RESULT</span>
+        <h3 data-sim="resultTitle">Transaction visibility</h3>
+
+        <div class="tx-output" id="txOutput" aria-live="polite">
+          <div class="tx-item">
+            <small data-sim="waiting">Waiting for simulation</small>
+            <span data-sim="waitingDesc">
+              Configure the transaction and press simulate.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section><section id="quiz"><div class="section-head"><div class="kicker" data-i="quizK">06 — Check your understanding</div><h2 data-i="quizH">Can you spot the privacy leak?</h2><p data-i="quizP">A short knowledge check. The examples are conceptual and use no real accounts, keys, or transactions.</p></div><div class="card" style="max-width:760px"><div class="quizq" id="question">Which pattern can reveal information about a shielded value?</div><div class="answers" id="answers"></div><div class="feedback" id="feedback" aria-live="polite"></div><div class="quiznav"><span class="micro" id="qProgress">Question 1 / 4</span><button class="smallbtn" id="nextQ" type="button" disabled>Next question →</button></div></div></section>
 <section id="limits"><div class="section-head"><div class="kicker" data-i="limitsK">07 — Threat model</div><h2 data-i="limitsH">Privacy is not the same as invisibility.</h2><p data-i="limitsP">Confidential execution can reduce exposure of selected data, but it does not automatically hide every observable signal or eliminate every security risk.</p></div><div class="grid two"><article class="card"><h3 data-i="visibleH">Metadata may remain visible</h3><p data-i="visibleP">Depending on the protocol and transaction path, details such as sender address, gas usage, target contract, timing, and transaction relationships may still be observable.</p></article><article class="card"><h3 data-i="teeH">TEE is not a magic shield</h3><p data-i="teeP">TEEs introduce hardware, firmware, side-channel, configuration, and operational trust assumptions. They reduce some risks; they do not erase the need for audits and careful threat modeling.</p></article></div><div class="notice" style="margin-top:16px" data-i="disclaimer">This is an independent educational project. It is not affiliated with, endorsed by, or an official publication of Seismic or Seismic Systems. This page is informational, not security advice. The interactive lab uses fictional local examples only and does not connect to Seismic or submit transactions.</div></section>
 <section id="sources"><div class="section-head"><div class="kicker" data-i="sourcesK">08 — Go deeper</div><h2 data-i="sourcesH">Read the primary sources.</h2><p data-i="sourcesP">Protocol details evolve. Use the official documentation and source repositories as the authority for current behavior.</p></div><div class="sources"><a href="https://docs.seismic.systems/overview/how-seismic-works" target="_blank" rel="noopener">How Seismic Works ↗</a><a href="https://docs.seismic.systems/seismic-solidity/footguns" target="_blank" rel="noopener">Seismic Solidity Footguns ↗</a><a href="https://docs.seismic.systems/reference/seismic-transaction/signed-reads" target="_blank" rel="noopener">Signed Reads ↗</a><a href="https://docs.seismic.systems/reference/seismic-transaction/cryptography" target="_blank" rel="noopener">Cryptography ↗</a><a href="https://github.com/SeismicSystems/seismic" target="_blank" rel="noopener">Official GitHub ↗</a></div></section>
 </main><footer class="footer"><div class="wrap footerline"><span>© <span id="year"></span> Seismic Uncovered · Independent learning project</span><span data-i="footerLine">Built for learning. Verify claims against primary sources.</span></div></footer>

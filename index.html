@@ -239,8 +239,8 @@
   const $ = id => document.getElementById(id);
 
   function currentLanguage() {
-    return document.documentElement.lang === "ar" ? "ar" : "en";
-  }
+  return lang === "ar" ? "ar" : "en";
+}
 
   function updateLabels() {
     const t = words[currentLanguage()];

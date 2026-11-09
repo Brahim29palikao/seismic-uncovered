@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080d18"><meta name="description" content="An independent educational guide to Seismic, programmable privacy, and safer confidential smart contract design.">
+<title>Seismic Uncovered — Privacy should be programmable</title>
+<style>
+:root{--bg:#080d18;--panel:#101827;--panel2:#0c1422;--line:#243248;--text:#edf4ff;--muted:#9aabc2;--cyan:#6de3e0;--violet:#a99aff;--amber:#f2c879;--green:#8fe0b0;--red:#ff9d9d;--radius:20px;--max:1160px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 75% -10%,#1c2c4d 0,transparent 36%),radial-gradient(ellipse at 5% 35%,#102a36 0,transparent 25%),var(--bg);color:var(--text);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--cyan);text-decoration:none}a:hover{text-decoration:underline}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}.top{position:sticky;top:0;z-index:20;background:#080d18d9;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff12}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.02em}.mark{
+  width:38px;
+  height:38px;
+  object-fit:contain;
+  display:block;
+  border:0;
+  border-radius:0;
+  background:transparent;
+}.navlinks{display:flex;gap:22px;font-size:13px;color:var(--muted)}.navlinks a{color:inherit}.lang{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:999px;padding:8px 13px;cursor:pointer;font-weight:700}.hero{padding:88px 0 64px;display:grid;grid-template-columns:1.1fr .9fr;gap:54px;align-items:center}.eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:.18em;font-size:11px;font-weight:800}.hero h1{font-size:clamp(42px,6vw,72px);line-height:1.03;letter-spacing:-.055em;margin:18px 0}.gradient{background:linear-gradient(100deg,#eaf8ff 5%,#77e5df 55%,#b5a4ff);-webkit-background-clip:text;background-clip:text;color:transparent}.lead{font-size:18px;color:#b5c4d8;max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:12px;padding:12px 18px;font-weight:750;border:1px solid var(--line);color:var(--text);background:#ffffff08}.btn.primary{background:linear-gradient(110deg,#66dcd6,#a89aff);color:#07101a;border:0}.micro{font-size:12px;color:var(--muted);margin-top:18px}.visual{border:1px solid #ffffff19;border-radius:26px;padding:24px;background:linear-gradient(145deg,#15243a,#0b1321 70%);box-shadow:0 30px 90px #0007;position:relative;overflow:hidden}.visual:before{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:#66dcd622;filter:blur(55px);right:-60px;top:-70px}.visual-head{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.12em}.lock{height:180px;display:grid;place-items:center;position:relative}.shield{width:108px;height:125px;border:1px solid #75e3dfaa;border-radius:55% 55% 48% 48%;display:grid;place-items:center;color:var(--cyan);font-size:44px;box-shadow:0 0 55px #66dcd622,inset 0 0 40px #66dcd611;clip-path:polygon(50% 0,94% 18%,88% 72%,50% 100%,12% 72%,6% 18%)}.orbit{position:absolute;width:220px;height:100px;border:1px dashed #9c9aff66;border-radius:50%;transform:rotate(-25deg)}.orbit.two{transform:rotate(35deg);width:255px}.visual-foot{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.metric{padding:12px;border:1px solid #ffffff12;border-radius:12px;background:#ffffff06}.metric b{display:block;color:var(--cyan);font-size:13px}.metric span{font-size:10px;color:var(--muted)}section{padding:66px 0;border-top:1px solid #ffffff0c}.section-head{max-width:760px;margin-bottom:28px}.kicker{color:var(--violet);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:800}.section-head h2{font-size:clamp(28px,4vw,42px);letter-spacing:-.04em;line-height:1.1;margin:10px 0}.section-head p{color:var(--muted);margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.grid.two{grid-template-columns:repeat(2,1fr)}.card{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:linear-gradient(145deg,#121d2d,#0c1421)}.card h3{margin:8px 0;font-size:18px}.card p,.card li{color:var(--muted);font-size:14px}.iconbox{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;color:var(--cyan);background:#6de3e012;border:1px solid #6de3e033;font-size:18px}.tag{display:inline-block;border:1px solid #6de3e044;color:var(--cyan);padding:3px 8px;border-radius:999px;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.architecture{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.layer{padding:18px 14px;border-radius:15px;border:1px solid var(--line);background:#101a2a;min-height:160px}.layer .num{color:var(--cyan);font-size:11px;font-weight:800}.layer h3{font-size:15px;margin:12px 0 5px}.layer p{font-size:12px;color:var(--muted);margin:0}.code{background:#070c14;border:1px solid #26354a;border-radius:14px;padding:18px;overflow:auto;color:#c6d6ec;font:13px/1.8 ui-monospace,SFMono-Regular,Consolas,monospace}.code .comment{color:#71869f}.code .kw{color:#b7a6ff}.code .type{color:#72e0db}.lab{border:1px solid #33445e;background:linear-gradient(140deg,#101b2d,#0b1320);border-radius:22px;padding:22px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.tab{border:1px solid var(--line);border-radius:999px;padding:8px 12px;color:var(--muted);background:transparent;cursor:pointer;font-size:12px}.tab.active{background:#6de3e018;border-color:#6de3e088;color:var(--cyan)}.labbody{display:grid;grid-template-columns:1fr 1fr;gap:18px}.lab h3{margin:0 0 10px}.lab p{color:var(--muted);font-size:14px}.explain{padding:16px;border-radius:14px;background:#f2c8790d;border:1px solid #f2c87933}.explain strong{color:var(--amber)}.switchrow{display:flex;align-items:center;gap:10px;margin:14px 0;color:var(--muted);font-size:13px}.switchrow input{accent-color:#6de3e0;width:17px;height:17px}.result{padding:14px;border-radius:12px;background:#6de3e00b;border:1px solid #6de3e033;color:#b9d8dd;font-size:13px;margin-top:12px}.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}.compare .card{padding:18px}.formula{font:12px ui-monospace,monospace;color:var(--cyan);overflow-wrap:anywhere}.quizq{font-size:17px;font-weight:750}.answers{display:grid;gap:9px;margin:16px 0}.answer{display:block;text-align:left;border:1px solid var(--line);background:#ffffff05;color:var(--text);padding:12px 14px;border-radius:12px;cursor:pointer}.answer:hover{border-color:var(--cyan)}.answer.correct{border-color:var(--green);background:#8fe0b011}.answer.wrong{border-color:var(--red);background:#ff9d9d11}.feedback{min-height:45px;color:var(--muted);font-size:13px}.quiznav{display:flex;align-items:center;justify-content:space-between;gap:10px}.smallbtn{border:1px solid var(--line);background:#ffffff08;color:var(--text);padding:9px 13px;border-radius:10px;cursor:pointer}.notice{border-left:3px solid var(--amber);padding:14px 17px;background:#f2c8790b;color:#c3cddd;border-radius:0 12px 12px 0;font-size:13px}.sources{display:flex;flex-wrap:wrap;gap:10px}.sources a{border:1px solid var(--line);padding:10px 13px;border-radius:10px;font-size:13px}.footer{padding:34px 0 50px;color:var(--muted);font-size:12px;border-top:1px solid #ffffff12}.footerline{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.rtl{direction:rtl}.rtl .navlinks{direction:rtl}.rtl .notice{border-left:0;border-right:3px solid var(--amber);border-radius:12px 0 0 12px}.rtl .answer{text-align:right}.rtl .hero{text-align:right}.rtl .section-head{text-align:right}.rtl .lab{text-align:right}.rtl .card{text-align:right}.rtl .layer{text-align:right}.rtl .footerline{direction:rtl}
+@media(max-width:850px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding-top:58px;gap:28px}.architecture{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr 1fr}.labbody{grid-template-columns:1fr}}@media(max-width:560px){.wrap{width:min(100% - 28px,var(--max))}.hero{padding:48px 0}.grid,.grid.two,.compare{grid-template-columns:1fr}.architecture{grid-template-columns:1fr 1fr}.visual{padding:17px}.visual-foot{grid-template-columns:1fr 1fr 1fr}.metric{padding:8px}.metric span{font-size:9px}section{padding:48px 0}}
+/* Transaction Simulator */
+.tx-sim {
+  border: 1px solid #33445e;
+  background: linear-gradient(145deg,#111d30,#0a1321);
+  border-radius: 22px;
+  padding: 24px;
+}
+.tx-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.tx-panel {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+  background: #ffffff05;
+}
+.tx-field {
+  display: grid;
+  gap: 7px;
+  margin: 14px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.tx-field input, .tx-field select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #080d18;
+  color: var(--text);
+  font: inherit;
+}
+.tx-run {
+  width: 100%;
+  padding: 13px;
+  border: 0;
+  border-radius: 11px;
+  background: linear-gradient(110deg,#66dcd6,#a89aff);
+  color: #07101a;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 12px;
+}
+.tx-output {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+.tx-item {
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: #ffffff06;
+  overflow-wrap: anywhere;
+}
+.tx-item small {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+.tx-visible { color: var(--amber); }
+.tx-protected { color: var(--green); }
+.tx-note {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 14px;
+}
+@media(max-width:700px) {
+  .tx-grid { grid-template-columns: 1fr; }
+  .tx-sim { padding: 15px; }
+  }</style>
+</head>
+<body>
+<header class="top"><div class="wrap nav"><a class="brand" href="#home">
+  <img class="mark" src="seismic-gem.png" alt="Seismic">
+  <span>SEISMIC <span style="color:var(--cyan)">UNCOVERED</span></span>
+</a><nav class="navlinks"><a href="#problem" data-i="navProblem">The problem</a><a href="#architecture" data-i="navArchitecture">Architecture</a><a href="#lab" data-i="navLab">Footguns lab</a><a href="#signed" data-i="navSigned">Signed reads</a><a href="#quiz" data-i="navQuiz">Quiz</a></nav><button class="lang" id="langBtn" type="button">العربية</button></div></header>
+<main id="home" class="wrap">
+<section class="hero" style="border:0"><div><div class="eyebrow" data-i="eyebrow">An independent learning resource</div><h1><span data-i="heroA">Privacy should be</span><br><span class="gradient" data-i="heroB">programmable.</span></h1><p class="lead" data-i="heroLead">Explore how Seismic approaches confidential smart contracts — and learn where privacy can still leak through application design.</p><div class="actions"><a class="btn primary" href="#architecture" data-i="explore">Explore the architecture ↘</a><a class="btn" href="#lab" data-i="openLab">Open the security lab</a></div><p class="micro" data-i="heroNote">Independent educational project · Fictional examples only · No network connection</p></div><div class="visual"><div class="visual-head"><span>Confidential execution model</span><span>01 / 04</span></div><div class="lock"><div class="orbit"></div><div class="orbit two"></div><div class="shield">◈</div></div><div class="visual-foot"><div class="metric"><b>Encrypted</b><span>Transaction data</span></div><div class="metric"><b>Shielded</b><span>Contract state</span></div><div class="metric"><b>Programmable</b><span>Privacy logic</span></div></div></div></section>
+<section id="problem"><div class="section-head"><div class="kicker" data-i="problemK">01 — The challenge</div><h2 data-i="problemH">Public chains expose more than users expect.</h2><p data-i="problemP">On transparent blockchains, transaction inputs and contract state can reveal business logic, balances, strategies, and user behavior. Privacy is not a single switch: it is a system property shaped by execution, data handling, and application choices.</p></div><div class="grid"><article class="card"><div class="iconbox">◉</div><h3 data-i="transparencyH">Transparency</h3><p data-i="transparencyP">Public execution makes verification possible, but can expose sensitive inputs and state to everyone observing the chain.</p></article><article class="card"><div class="iconbox">⌁</div><h3 data-i="confidentialityH">Confidentiality</h3><p data-i="confidentialityP">Confidential computation aims to protect selected values while preserving useful on-chain behavior.</p></article><article class="card"><div class="iconbox">⌘</div><h3 data-i="programmabilityH">Programmability</h3><p data-i="programmabilityP">Developers need familiar contract patterns and explicit control over which values are public or shielded.</p></article></div></section>
+<section id="architecture"><div class="section-head"><div class="kicker" data-i="architectureK">02 — System overview</div><h2 data-i="architectureH">A layered approach to on-chain privacy.</h2><p data-i="architectureP">Seismic combines changes across the developer toolchain, transaction format, execution environment, and state handling. The exact guarantees depend on the implementation and threat model.</p></div><div class="architecture"><div class="layer"><span class="num">LAYER 01</span><h3 data-i="layer1H">Seismic Solidity</h3><p data-i="layer1P">A modified Solidity toolchain introduces shielded types such as <code>suint256</code> and <code>sbool</code>.</p></div><div class="layer"><span class="num">LAYER 02</span><h3 data-i="layer2H">Encrypted transactions</h3><p data-i="layer2P">A Seismic transaction type can carry encrypted calldata rather than ordinary plaintext inputs.</p></div><div class="layer"><span class="num">LAYER 03</span><h3 data-i="layer3H">TEE execution</h3><p data-i="layer3P">Trusted Execution Environments, including Intel TDX-based infrastructure, support confidential processing.</p></div><div class="layer"><span class="num">LAYER 04</span><h3 data-i="layer4H">Shielded storage</h3><p data-i="layer4P">Dedicated operations such as <code>CLOAD</code> and <code>CSTORE</code> support protected state access.</p></div></div><div class="code" style="margin-top:16px"><span class="comment">// Illustrative Seismic Solidity-style snippet — not compiled or executed</span><br><span class="kw">contract</span> PrivateVault {<br>&nbsp;&nbsp;<span class="type">suint256</span> private balance;<br>&nbsp;&nbsp;<span class="kw">function</span> deposit(<span class="type">suint256</span> amount) external {<br>&nbsp;&nbsp;&nbsp;&nbsp;balance = balance + amount;<br>&nbsp;&nbsp;}<br>}</div></section>
+<section id="lab"><div class="section-head"><div class="kicker" data-i="labK">03 — Interactive security lab</div><h2 data-i="labH">Privacy footguns: test your assumptions.</h2><p data-i="labP">Explore common patterns that can leak information even when sensitive values use shielded types. These are simplified, fictional demonstrations — not live chain simulations.</p></div><div class="lab"><div class="tabs" id="labTabs"><button class="tab active" data-tab="branch" data-i="tabBranch">Conditional branches</button><button class="tab" data-tab="loop" data-i="tabLoop">Dynamic loops</button><button class="tab" data-tab="getter" data-i="tabGetter">Public getters</button><button class="tab" data-tab="calldata" data-i="tabCalldata">Plain calldata</button><button class="tab" data-tab="literal" data-i="tabLiteral">Hardcoded values</button></div><div class="labbody"><div><h3 id="labTitle">A branch can reveal a secret through gas.</h3><p id="labDesc">If execution takes measurably different paths depending on a shielded value, gas usage may reveal information about that value.</p><div class="code" id="labCode"><span class="comment">// Risky pattern (illustrative)</span><br><span class="kw">if</span> (secretAmount &gt; threshold) {<br>&nbsp;&nbsp;performMoreWork();<br>} <span class="kw">else</span> {<br>&nbsp;&nbsp;performLessWork();<br>}</div></div><div><div class="explain"><strong data-i="tryIt">Try the model</strong><div id="labControl" class="switchrow"><label><input id="secretToggle" type="checkbox"> Secret condition is true</label></div><div class="result" id="labResult" aria-live="polite">Observed gas profile: higher-work path. The branch outcome may be inferable from public execution metadata.</div></div><p id="labTip">Safer direction: avoid secret-dependent public control flow where possible; use constant-work designs and review observable execution behavior.</p></div></div></div></section>
+<section id="signed"><div class="section-head"><div class="kicker" data-i="signedK">04 — Authenticated data access</div><h2 data-i="signedH">Signed Reads: who is asking matters.</h2><p data-i="signedP">A conventional <code>eth_call</code> is a simulation request and may not prove the identity of the reader. Seismic Signed Reads are designed to authenticate the requester and allow a response to be encrypted to the client's key.</p></div><div class="compare"><article class="card"><span class="tag">eth_call</span><h3 data-i="ethCallH">Ordinary read</h3><ul><li data-i="ethCall1">A read-only call simulation.</li><li data-i="ethCall2">The caller identity may be absent or not authenticated in the way an application needs.</li><li data-i="ethCall3">Returned data is not inherently encrypted to a verified reader.</li></ul></article><article class="card" style="border-color:#6de3e055"><span class="tag">Signed Read</span><h3 data-i="signedReadH">Authenticated read</h3><ul><li data-i="signedRead1">The request carries a signature tied to the reader.</li><li data-i="signedRead2">The contract can verify who is requesting protected data.</li><li data-i="signedRead3">The response can be encrypted for the client's key.</li></ul></article></div><p class="micro" data-i="signedNote">Implementation details and supported flows should always be checked against the current official documentation.</p></section>
+<section id="crypto"><div class="section-head"><div class="kicker" data-i="cryptoK">05 — Cryptographic building blocks</div><h2 data-i="cryptoH">From shared secret to authenticated ciphertext.</h2><p data-i="cryptoP">The documented flow uses established cryptographic primitives for key agreement, key derivation, and authenticated encryption.</p></div><div class="grid"><article class="card"><span class="tag">01 · Key agreement</span><h3>ECDH</h3><p data-i="ecdhP">Elliptic-curve Diffie–Hellman allows two parties to derive a shared secret using their key material.</p><div class="formula">Shared secret ← ECDH(private, public)</div></article><article class="card"><span class="tag">02 · Key derivation</span><h3>HKDF-SHA256</h3><p data-i="hkdfP">HKDF derives purpose-specific cryptographic key material from the shared secret and context.</p><div class="formula">Key ← HKDF-SHA256(secret, salt, info)</div></article><article class="card"><span class="tag">03 · Authenticated encryption</span><h3>AES-256-GCM</h3><p data-i="aesP">AES-GCM encrypts data and authenticates it, detecting unauthorized modification of ciphertext.</p><div class="formula">Ciphertext + tag ← AES-256-GCM(key, nonce)</div></article></div></section>
+<section id="simulator">
+  <div class="section-head">
+    <div class="kicker" data-sim="kicker">04 — Interactive transaction lab</div>
+    <h2 data-sim="title">See what a private transaction reveals.</h2>
+    <p data-sim="intro">
+      Compare an ordinary transaction with a conceptual shielded transaction.
+      All values are fictional and simulated locally.
+    </p>
+  </div>
+
+  <div class="tx-sim">
+    <div class="tx-grid">
+      <div class="tx-panel">
+        <span class="tag" data-sim="inputTag">TRANSACTION INPUT</span>
+        <h3 data-sim="configure">Configure your transaction</h3>
+
+        <label class="tx-field">
+          <span data-sim="amountLabel">Transfer amount</span>
+          <input id="txAmount" type="number" min="1"
+            max="1000000" value="250" step="1">
+        </label>
+
+        <label class="tx-field">
+          <span data-sim="recipientLabel">Fictional recipient</span>
+          <input id="txRecipient" type="text"
+            value="0xDEMO...7A21" maxlength="42">
+        </label>
+
+        <label class="tx-field">
+          <span data-sim="modeLabel">Transaction mode</span>
+          <select id="txMode">
+            <option value="public" data-sim="publicOption">
+              Ordinary transaction
+            </option>
+            <option value="shielded" data-sim="shieldOption">
+              Conceptual shielded transaction
+            </option>
+          </select>
+        </label>
+
+        <button class="tx-run" id="txRun" type="button"
+          data-sim="run">Simulate transaction ↗</button>
+
+        <p class="tx-note" data-sim="localNote">
+          Local demonstration only. No wallet, blockchain or network connection.
+        </p>
+      </div>
+
+      <div class="tx-panel">
+        <span class="tag" data-sim="outputTag">SIMULATION RESULT</span>
+        <h3 data-sim="resultTitle">Transaction visibility</h3>
+
+        <div class="tx-output" id="txOutput" aria-live="polite">
+          <div class="tx-item">
+            <small data-sim="waiting">Waiting for simulation</small>
+            <span data-sim="waitingDesc">
+              Configure the transaction and press simulate.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section><section id="quiz"><div class="section-head"><div class="kicker" data-i="quizK">06 — Check your understanding</div><h2 data-i="quizH">Can you spot the privacy leak?</h2><p data-i="quizP">A short knowledge check. The examples are conceptual and use no real accounts, keys, or transactions.</p></div><div class="card" style="max-width:760px"><div class="quizq" id="question">Which pattern can reveal information about a shielded value?</div><div class="answers" id="answers"></div><div class="feedback" id="feedback" aria-live="polite"></div><div class="quiznav"><span class="micro" id="qProgress">Question 1 / 4</span><button class="smallbtn" id="nextQ" type="button" disabled>Next question →</button></div></div></section>
+<section id="limits"><div class="section-head"><div class="kicker" data-i="limitsK">07 — Threat model</div><h2 data-i="limitsH">Privacy is not the same as invisibility.</h2><p data-i="limitsP">Confidential execution can reduce exposure of selected data, but it does not automatically hide every observable signal or eliminate every security risk.</p></div><div class="grid two"><article class="card"><h3 data-i="visibleH">Metadata may remain visible</h3><p data-i="visibleP">Depending on the protocol and transaction path, details such as sender address, gas usage, target contract, timing, and transaction relationships may still be observable.</p></article><article class="card"><h3 data-i="teeH">TEE is not a magic shield</h3><p data-i="teeP">TEEs introduce hardware, firmware, side-channel, configuration, and operational trust assumptions. They reduce some risks; they do not erase the need for audits and careful threat modeling.</p></article></div><div class="notice" style="margin-top:16px" data-i="disclaimer">This is an independent educational project. It is not affiliated with, endorsed by, or an official publication of Seismic or Seismic Systems. This page is informational, not security advice. The interactive lab uses fictional local examples only and does not connect to Seismic or submit transactions.</div></section>
+<section id="sources"><div class="section-head"><div class="kicker" data-i="sourcesK">08 — Go deeper</div><h2 data-i="sourcesH">Read the primary sources.</h2><p data-i="sourcesP">Protocol details evolve. Use the official documentation and source repositories as the authority for current behavior.</p></div><div class="sources"><a href="https://docs.seismic.systems/overview/how-seismic-works" target="_blank" rel="noopener">How Seismic Works ↗</a><a href="https://docs.seismic.systems/seismic-solidity/footguns" target="_blank" rel="noopener">Seismic Solidity Footguns ↗</a><a href="https://docs.seismic.systems/reference/seismic-transaction/signed-reads" target="_blank" rel="noopener">Signed Reads ↗</a><a href="https://docs.seismic.systems/reference/seismic-transaction/cryptography" target="_blank" rel="noopener">Cryptography ↗</a><a href="https://github.com/SeismicSystems/seismic" target="_blank" rel="noopener">Official GitHub ↗</a></div></section>
+</main><footer class="footer"><div class="wrap footerline"><span>© <span id="year"></span> Seismic Uncovered · Independent learning project</span><span data-i="footerLine">Built for learning. Verify claims against primary sources.</span></div></footer>
+<script>
+const translations={en:{navProblem:'The problem',navArchitecture:'Architecture',navLab:'Footguns lab',navSigned:'Signed reads',navQuiz:'Quiz',eyebrow:'An independent learning resource',heroA:'Privacy should be',heroB:'programmable.',heroLead:'Explore how Seismic approaches confidential smart contracts — and learn where privacy can still leak through application design.',explore:'Explore the architecture ↘',openLab:'Open the security lab',heroNote:'Independent educational project · Fictional examples only · No network connection',problemK:'01 — The challenge',problemH:'Public chains expose more than users expect.',problemP:'On transparent blockchains, transaction inputs and contract state can reveal business logic, balances, strategies, and user behavior. Privacy is not a single switch: it is a system property shaped by execution, data handling, and application choices.',transparencyH:'Transparency',transparencyP:'Public execution makes verification possible, but can expose sensitive inputs and state to everyone observing the chain.',confidentialityH:'Confidentiality',confidentialityP:'Confidential computation aims to protect selected values while preserving useful on-chain behavior.',programmabilityH:'Programmability',programmabilityP:'Developers need familiar contract patterns and explicit control over which values are public or shielded.',architectureK:'02 — System overview',architectureH:'A layered approach to on-chain privacy.',architectureP:'Seismic combines changes across the developer toolchain, transaction format, execution environment, and state handling. The exact guarantees depend on the implementation and threat model.',layer1H:'Seismic Solidity',layer1P:'A modified Solidity toolchain introduces shielded types such as suint256 and sbool.',layer2H:'Encrypted transactions',layer2P:'A Seismic transaction type can carry encrypted calldata rather than ordinary plaintext inputs.',layer3H:'TEE execution',layer3P:'Trusted Execution Environments, including Intel TDX-based infrastructure, support confidential processing.',layer4H:'Shielded storage',layer4P:'Dedicated operations such as CLOAD and CSTORE support protected state access.',labK:'03 — Interactive security lab',labH:'Privacy footguns: test your assumptions.',labP:'Explore common patterns that can leak information even when sensitive values use shielded types. These are simplified, fictional demonstrations — not live chain simulations.',tabBranch:'Conditional branches',tabLoop:'Dynamic loops',tabGetter:'Public getters',tabCalldata:'Plain calldata',tabLiteral:'Hardcoded values',tryIt:'Try the model',signedK:'04 — Authenticated data access',signedH:'Signed Reads: who is asking matters.',signedP:'A conventional eth_call is a simulation request and may not prove the identity of the reader. Seismic Signed Reads are designed to authenticate the requester and allow a response to be encrypted to the client’s key.',ethCallH:'Ordinary read',ethCall1:'A read-only call simulation.',ethCall2:'The caller identity may be absent or not authenticated in the way an application needs.',ethCall3:'Returned data is not inherently encrypted to a verified reader.',signedReadH:'Authenticated read',signedRead1:'The request carries a signature tied to the reader.',signedRead2:'The contract can verify who is requesting protected data.',signedRead3:'The response can be encrypted for the client’s key.',signedNote:'Implementation details and supported flows should always be checked against the current official documentation.',cryptoK:'05 — Cryptographic building blocks',cryptoH:'From shared secret to authenticated ciphertext.',cryptoP:'The documented flow uses established cryptographic primitives for key agreement, key derivation, and authenticated encryption.',ecdhP:'Elliptic-curve Diffie–Hellman allows two parties to derive a shared secret using their key material.',hkdfP:'HKDF derives purpose-specific cryptographic key material from the shared secret and context.',aesP:'AES-GCM encrypts data and authenticates it, detecting unauthorized modification of ciphertext.',quizK:'06 — Check your understanding',quizH:'Can you spot the privacy leak?',quizP:'A short knowledge check. The examples are conceptual and use no real accounts, keys, or transactions.',limitsK:'07 — Threat model',limitsH:'Privacy is not the same as invisibility.',limitsP:'Confidential execution can reduce exposure of selected data, but it does not automatically hide every observable signal or eliminate every security risk.',visibleH:'Metadata may remain visible',visibleP:'Depending on the protocol and transaction path, details such as sender address, gas usage, target contract, timing, and transaction relationships may still be observable.',teeH:'TEE is not a magic shield',teeP:'TEEs introduce hardware, firmware, side-channel, configuration, and operational trust assumptions. They reduce some risks; they do not erase the need for audits and careful threat modeling.',disclaimer:'This is an independent educational project. It is not affiliated with, endorsed by, or an official publication of Seismic or Seismic Systems. This page is informational, not security advice. The interactive lab uses fictional local examples only and does not connect to Seismic or submit transactions.',sourcesK:'08 — Go deeper',sourcesH:'Read the primary sources.',sourcesP:'Protocol details evolve. Use the official documentation and source repositories as the authority for current behavior.',footerLine:'Built for learning. Verify claims against primary sources.'},ar:{navProblem:'المشكلة',navArchitecture:'البنية',navLab:'مختبر المخاطر',navSigned:'القراءات الموقّعة',navQuiz:'اختبر معرفتك',eyebrow:'مورد تعليمي مستقل',heroA:'يجب أن تكون الخصوصية',heroB:'قابلة للبرمجة.',heroLead:'اكتشف كيف تتعامل Seismic مع العقود الذكية السرية، وتعرّف على المواضع التي قد تتسرّب منها الخصوصية بسبب تصميم التطبيق.',explore:'استكشف البنية ↘',openLab:'افتح مختبر الأمان',heroNote:'مشروع تعليمي مستقل · أمثلة خيالية فقط · لا يوجد اتصال بالشبكة',problemK:'01 — التحدي',problemH:'سلاسل البلوكشين العامة تكشف أكثر مما يتوقعه المستخدمون.',problemP:'في سلاسل البلوكشين الشفافة، قد تكشف مدخلات المعاملات وحالة العقود منطق العمل والأرصدة والاستراتيجيات وسلوك المستخدم. الخصوصية ليست مفتاحاً واحداً؛ بل خاصية للنظام تتأثر بالتنفيذ ومعالجة البيانات وخيارات التطبيق.',transparencyH:'الشفافية',transparencyP:'يتيح التنفيذ العام التحقق، لكنه قد يكشف المدخلات والحالة الحساسة لكل من يراقب السلسلة.',confidentialityH:'السرية',confidentialityP:'تهدف الحوسبة السرية إلى حماية قيم محددة مع الحفاظ على سلوك مفيد على السلسلة.',programmabilityH:'قابلية البرمجة',programmabilityP:'يحتاج المطورون إلى أنماط عقود مألوفة وتحكم واضح في القيم العامة والمحمية.',architectureK:'02 — نظرة عامة على النظام',architectureH:'نهج متعدد الطبقات لخصوصية البلوكشين.',architectureP:'تجمع Seismic تغييرات في أدوات المطورين وتنسيق المعاملات وبيئة التنفيذ والتعامل مع الحالة. وتعتمد الضمانات الفعلية على التنفيذ ونموذج التهديد.',layer1H:'Seismic Solidity',layer1P:'أدوات Solidity معدّلة تقدم أنواعاً محمية مثل suint256 وsbool.',layer2H:'معاملات مشفّرة',layer2P:'يمكن لنوع معاملات Seismic حمل calldata مشفّرة بدلاً من المدخلات النصية العادية.',layer3H:'التنفيذ عبر TEE',layer3P:'تدعم بيئات التنفيذ الموثوقة، ومنها البنية القائمة على Intel TDX، المعالجة السرية.',layer4H:'التخزين المحمي',layer4P:'تدعم عمليات مخصصة مثل CLOAD وCSTORE الوصول إلى الحالة المحمية.',labK:'03 — مختبر أمان تفاعلي',labH:'مخاطر الخصوصية: اختبر افتراضاتك.',labP:'استكشف أنماطاً شائعة قد تسرّب المعلومات حتى عند استخدام أنواع محمية. هذه عروض مبسطة وخيالية وليست محاكاة مباشرة للشبكة.',tabBranch:'التفرعات الشرطية',tabLoop:'الحلقات الديناميكية',tabGetter:'دوال القراءة العامة',tabCalldata:'بيانات غير مشفّرة',tabLiteral:'قيم ثابتة مكشوفة',tryIt:'جرّب النموذج',signedK:'04 — الوصول الموثّق إلى البيانات',signedH:'Signed Reads: هوية القارئ مهمة.',signedP:'إن eth_call التقليدي طلب محاكاة، وقد لا يثبت هوية القارئ. صُممت Signed Reads في Seismic لتوثيق صاحب الطلب وإتاحة تشفير الاستجابة بمفتاح العميل.',ethCallH:'قراءة عادية',ethCall1:'محاكاة لاستدعاء للقراءة فقط.',ethCall2:'قد تكون هوية المستدعي غائبة أو غير موثقة بالطريقة التي يحتاجها التطبيق.',ethCall3:'لا تكون البيانات المعادة مشفّرة تلقائياً لقارئ تم التحقق منه.',signedReadH:'قراءة موثّقة',signedRead1:'يحمل الطلب توقيعاً مرتبطاً بهوية القارئ.',signedRead2:'يمكن للعقد التحقق ممن يطلب البيانات المحمية.',signedRead3:'يمكن تشفير الاستجابة بمفتاح العميل.',signedNote:'يجب دائماً مراجعة تفاصيل التنفيذ والتدفقات المدعومة في الوثائق الرسمية الحالية.',cryptoK:'05 — اللبنات التشفيرية',cryptoH:'من السر المشترك إلى النص المشفّر الموثّق.',cryptoP:'يستخدم التدفق الموثق بدائيات تشفير معروفة لتبادل المفاتيح واشتقاقها والتشفير الموثّق.',ecdhP:'تتيح ECDH لطرفين اشتقاق سر مشترك باستخدام مواد المفاتيح الخاصة بهما.',hkdfP:'تشتق HKDF مواد مفاتيح تشفيرية مخصصة من السر المشترك والسياق.',aesP:'تشفّر AES-GCM البيانات وتوثّق سلامتها، فتكتشف التعديل غير المصرح به على النص المشفّر.',quizK:'06 — تحقق من فهمك',quizH:'هل تستطيع اكتشاف تسرّب الخصوصية؟',quizP:'اختبار قصير. الأمثلة مفاهيمية ولا تستخدم حسابات أو مفاتيح أو معاملات حقيقية.',limitsK:'07 — نموذج التهديد',limitsH:'الخصوصية لا تعني الاختفاء التام.',limitsP:'يمكن للتنفيذ السري تقليل انكشاف بيانات محددة، لكنه لا يخفي تلقائياً كل الإشارات القابلة للرصد ولا يلغي جميع المخاطر الأمنية.',visibleH:'قد تبقى البيانات الوصفية ظاهرة',visibleP:'بحسب البروتوكول ومسار المعاملة، قد تظل تفاصيل مثل عنوان المرسل واستهلاك الغاز والعقد المستهدف والتوقيت والعلاقات بين المعاملات قابلة للرصد.',teeH:'TEE ليست درعاً سحرياً',teeP:'تضيف TEE افتراضات ثقة تتعلق بالعتاد والبرمجيات الثابتة والقنوات الجانبية والإعدادات والتشغيل. قد تقلل بعض المخاطر لكنها لا تلغي الحاجة إلى التدقيق ونموذج تهديد دقيق.',disclaimer:'هذا مشروع تعليمي مستقل، وليس تابعاً لـ Seismic أو Seismic Systems ولا معتمداً منهما ولا منشوراً رسمياً لهما. المحتوى للتثقيف وليس نصيحة أمنية. يستخدم المختبر أمثلة محلية خيالية فقط ولا يتصل بشبكة Seismic ولا يرسل معاملات.',sourcesK:'08 — تعمّق أكثر',sourcesH:'ارجع إلى المصادر الأصلية.',sourcesP:'تتطور تفاصيل البروتوكول. اعتمد الوثائق الرسمية ومستودعات المصدر لمعرفة السلوك الحالي.',footerLine:'صُمم للتعلم. تحقّق من المعلومات بالرجوع إلى المصادر الأصلية.'}};
+let lang='en';function setLang(next){lang=next;document.documentElement.lang=next;document.documentElement.dir=next==='ar'?'rtl':'ltr';document.body.classList.toggle('rtl',next==='ar');document.querySelectorAll('[data-i]').forEach(el=>{const key=el.dataset.i;if(translations[next][key])el.textContent=translations[next][key]});document.getElementById('langBtn').textContent=next==='en'?'العربية':'English';renderLab();renderQuiz();}document.getElementById('langBtn').addEventListener('click',()=>setLang(lang==='en'?'ar':'en'));
+const labData={branch:{en:['A branch can reveal a secret through gas.','If execution takes measurably different paths depending on a shielded value, gas usage may reveal information about that value.','// Risky pattern (illustrative)\nif (secretAmount > threshold) {\n  performMoreWork();\n} else {\n  performLessWork();\n}','Safer direction: avoid secret-dependent public control flow where possible; use constant-work designs and review observable execution behavior.'],ar:['قد يكشف التفرع سراً عبر استهلاك الغاز.','إذا اتخذ التنفيذ مسارات مختلفة بشكل قابل للقياس وفق قيمة محمية، فقد يكشف استهلاك الغاز معلومات عن تلك القيمة.','// نمط محفوف بالمخاطر (توضيحي)\nif (secretAmount > threshold) {\n  performMoreWork();\n} else {\n  performLessWork();\n}','اتجاه أكثر أماناً: تجنب تدفق التحكم العام المعتمد على الأسرار قدر الإمكان، واستخدم تصميماً متقارب الكلفة وراجع سلوك التنفيذ القابل للرصد.']},loop:{en:['A secret-dependent loop can leak its value.','If the number of iterations depends on a shielded value, execution cost or timing may expose a range or exact value.','// Risky pattern (illustrative)\nfor (uint i = 0; i < secretCount; i++) {\n  processItem(i);\n}','Safer direction: use bounded, fixed-iteration work where practical; do not assume a shielded variable makes loop behavior invisible.'],ar:['قد تكشف الحلقة المعتمدة على سر قيمته.','إذا اعتمد عدد التكرارات على قيمة محمية، فقد تكشف كلفة التنفيذ أو توقيته نطاق القيمة أو قيمتها الدقيقة.','// نمط محفوف بالمخاطر (توضيحي)\nfor (uint i = 0; i < secretCount; i++) {\n  processItem(i);\n}','اتجاه أكثر أماناً: استخدم عملاً محدوداً بعدد تكرارات ثابت متى أمكن، ولا تفترض أن نوع المتغير المحمي يخفي سلوك الحلقة.']},getter:{en:['A public getter can expose protected state.','Automatically generated or explicitly public read methods may expose values that developers expected to remain private.','// Review visibility carefully\nfunction getBalance() public view returns (uint) {\n  return sensitiveBalance;\n}','Safer direction: review generated getters and access control; expose only what users are meant to learn, through the intended protected-read flow.'],ar:['قد تكشف دالة getter عامة حالة يفترض أنها محمية.','قد تكشف دوال القراءة العامة، التلقائية أو الصريحة، قيماً توقع المطورون بقاءها خاصة.','// راجع مستوى الإتاحة بعناية\nfunction getBalance() public view returns (uint) {\n  return sensitiveBalance;\n}','اتجاه أكثر أماناً: راجع دوال getter التلقائية والتحكم بالوصول، ولا تكشف إلا ما يُفترض أن يعرفه المستخدم عبر مسار القراءة المحمية المناسب.']},calldata:{en:['Ordinary calldata is not confidential by default.','Sending sensitive inputs through a normal transaction path can leave them visible even if the contract stores values in shielded types.','// Sensitive input in ordinary calldata\nfunction bid(uint amount) external {\n  // amount may be publicly observable\n}','Safer direction: use the protocol’s intended encrypted transaction path for sensitive inputs and verify the client/tooling flow.'],ar:['بيانات calldata العادية ليست سرية افتراضياً.','قد يؤدي إرسال مدخلات حساسة عبر مسار معاملة عادي إلى كشفها، حتى لو خزّن العقد القيم في أنواع محمية.','// مدخل حساس في calldata عادية\nfunction bid(uint amount) external {\n  // قد تكون amount مرئية للعامة\n}','اتجاه أكثر أماناً: استخدم مسار المعاملات المشفّرة المخصص للمدخلات الحساسة، وتحقق من تدفق العميل والأدوات.']},literal:{en:['Hardcoded secrets are not secrets.','A sensitive constant embedded in public contract code can be recovered by anyone inspecting the deployed bytecode or source.','// Never embed secrets in public code\nuint privateKeyHint = 123456;','Safer direction: do not place secrets or low-entropy sensitive values in public code. Use appropriate cryptographic commitments and high-entropy randomness where needed.'],ar:['القيم السرية المكتوبة داخل الكود ليست أسراراً.','يمكن لأي شخص يفحص الشيفرة المنشورة أو bytecode استرجاع قيمة حساسة مضمنة كثابت في العقد العام.','// لا تضع أسراراً داخل كود عام\nuint privateKeyHint = 123456;','اتجاه أكثر أماناً: لا تضع أسراراً أو قيماً حساسة منخفضة العشوائية داخل الكود العام. استخدم التزامات تشفيرية وعشوائية عالية الانتروبيا عند الحاجة.']}};let activeTab='branch';function renderLab(){const d=labData[activeTab][lang];document.getElementById('labTitle').textContent=d[0];document.getElementById('labDesc').textContent=d[1];document.getElementById('labCode').textContent=d[2];document.getElementById('labTip').textContent=d[3];const c=document.getElementById('labControl');if(activeTab==='branch'){c.innerHTML=`<label><input id="secretToggle" type="checkbox"> ${lang==='en'?'Secret condition is true':'الشرط السري صحيح'}</label>`;document.getElementById('secretToggle').addEventListener('change',e=>document.getElementById('labResult').textContent=lang==='en'?(e.target.checked?'Observed gas profile: higher-work path. The branch outcome may be inferable.':'Observed gas profile: lower-work path. The branch outcome may be inferable.'):(e.target.checked?'نمط الغاز المرصود: مسار العمل الأعلى. قد يمكن استنتاج نتيجة التفرع.':'نمط الغاز المرصود: مسار العمل الأقل. قد يمكن استنتاج نتيجة التفرع.'));}else{c.innerHTML=`<span>${lang==='en'?'Select this pattern to review its exposure.':'راجع هذا النمط لفهم موضع الانكشاف.'}</span>`;}document.getElementById('labResult').textContent=lang==='en'?'This local demonstration illustrates a possible information leak; it does not execute code or measure real gas.':'يوضح هذا النموذج المحلي احتمال تسرّب المعلومات؛ ولا ينفذ كوداً ولا يقيس استهلاك الغاز الحقيقي.';document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===activeTab));}document.getElementById('labTabs').addEventListener('click',e=>{const b=e.target.closest('[data-tab]');if(!b)return;activeTab=b.dataset.tab;renderLab()});
+const questions={en:[['Which pattern can reveal information about a shielded value?',['A secret-dependent branch with different gas costs','Using a descriptive variable name','Adding a code comment'],0,'Different execution paths can create observable gas differences.'],['What does a Signed Read aim to add?',['A faster block time','Reader authentication and protected response delivery','Automatic hiding of all metadata'],1,'Signed Reads are about authenticating the requester and protecting the returned data.'],['Does a TEE eliminate all security risks?',['Yes, completely','Only if the contract is short','No; it adds trust assumptions and does not remove every risk'],2,'Hardware, firmware, side channels, and operations remain part of the threat model.'],['Which input path is appropriate for sensitive transaction data?',['Any ordinary public calldata','The protocol’s intended encrypted transaction path','A hardcoded constant'],1,'Sensitive inputs need the intended encrypted transaction flow; shielded storage alone is not enough.']],ar:[['أي نمط قد يكشف معلومات عن قيمة محمية؟',['تفرع يعتمد على سر ويختلف استهلاك الغاز فيه','استخدام اسم متغير وصفي','إضافة تعليق للكود'],0,'اختلاف مسارات التنفيذ قد ينتج فروقاً في استهلاك الغاز يمكن رصدها.'],['ما الذي تهدف Signed Reads إلى إضافته؟',['وقت كتلة أسرع','توثيق هوية القارئ وحماية إيصال الاستجابة','إخفاء كل البيانات الوصفية تلقائياً'],1,'تركز Signed Reads على توثيق صاحب الطلب وحماية البيانات المعادة.'],['هل تلغي TEE جميع المخاطر الأمنية؟',['نعم، بالكامل','فقط إذا كان العقد قصيراً','لا؛ فهي تضيف افتراضات ثقة ولا تلغي جميع المخاطر'],2,'تظل مخاطر العتاد والبرمجيات الثابتة والقنوات الجانبية والتشغيل ضمن نموذج التهديد.'],['ما المسار المناسب لبيانات المعاملات الحساسة؟',['أي calldata عامة عادية','مسار المعاملات المشفّرة المخصص في البروتوكول','قيمة ثابتة داخل الكود'],1,'تحتاج المدخلات الحساسة إلى تدفق المعاملات المشفّرة المقصود؛ فالتخزين المحمي وحده لا يكفي.']]};let qi=0,answered=false;function renderQuiz(){const q=questions[lang][qi];document.getElementById('question').textContent=q[0];document.getElementById('answers').innerHTML='';q[1].forEach((a,i)=>{const b=document.createElement('button');b.className='answer';b.textContent=a;b.addEventListener('click',()=>{if(answered)return;answered=true;b.classList.add(i===q[2]?'correct':'wrong');if(i!==q[2])document.querySelectorAll('.answer')[q[2]].classList.add('correct');document.getElementById('feedback').textContent=(i===q[2]?(lang==='en'?'Correct. ':'صحيح. '):(lang==='en'?'Not quite. ':'ليس تماماً. '))+q[3];document.getElementById('nextQ').disabled=false});document.getElementById('answers').appendChild(b)});document.getElementById('feedback').textContent='';document.getElementById('qProgress').textContent=(lang==='en'?`Question ${qi+1} / 4`:`السؤال ${qi+1} من 4`);document.getElementById('nextQ').textContent=qi===3?(lang==='en'?'Restart ↻':'أعد الاختبار ↻'):(lang==='en'?'Next question →':'السؤال التالي ←');document.getElementById('nextQ').disabled=true;answered=false;}document.getElementById('nextQ').addEventListener('click',()=>{qi=(qi+1)%4;renderQuiz()});document.getElementById('year').textContent=new Date().getFullYear();renderLab();renderQuiz();
+
+
+// Seismic Uncovered — Local Transaction Simulator
+(function () {
+  const words = {
+    en: {
+      kicker: "04 — Interactive transaction lab",
+      title: "See what a private transaction reveals.",
+      intro: "Compare an ordinary transaction with a conceptual shielded transaction. All values are fictional and simulated locally.",
+      inputTag: "TRANSACTION INPUT", configure: "Configure your transaction",
+      amountLabel: "Transfer amount", recipientLabel: "Fictional recipient",
+      modeLabel: "Transaction mode", publicOption: "Ordinary transaction",
+      shieldOption: "Conceptual shielded transaction", run: "Simulate transaction ↗",
+      localNote: "Local demonstration only. No wallet, blockchain or network connection.",
+      outputTag: "SIMULATION RESULT", resultTitle: "Transaction visibility",
+      waiting: "Waiting for simulation", waitingDesc: "Configure the transaction and press simulate.",
+      publicTitle: "Ordinary transaction", shieldTitle: "Conceptual shielded transaction",
+      amount: "Transfer amount", recipient: "Recipient", sender: "Sender",
+      contract: "Target contract", gas: "Illustrative gas profile",
+      visible: "Potentially visible metadata", protected: "Conceptually protected inputs",
+      publicExplanation: "In this conceptual example, ordinary transaction inputs are treated as publicly observable.",
+      shieldExplanation: "In this conceptual example, the amount and recipient are treated as protected inputs. This does not mean every Seismic transaction hides all metadata.",
+      warning: "Important: sender address, target contract, gas usage, timing and other metadata may remain observable. Actual behavior depends on the protocol and transaction path.",
+      invalid: "Please enter a valid positive amount and a recipient.",
+      fictional: "Fictional demo value", notMeasured: "Not measured — illustrative only"
+    },
+    ar: {
+      kicker: "04 — مختبر المعاملات التفاعلي",
+      title: "اكتشف ما الذي تكشفه المعاملة الخاصة.",
+      intro: "قارن بين معاملة عادية ومعاملة محمية بشكل توضيحي. جميع القيم خيالية والمحاكاة محلية.",
+      inputTag: "مدخلات المعاملة", configure: "إعداد المعاملة",
+      amountLabel: "مبلغ التحويل", recipientLabel: "المستلم الخيالي",
+      modeLabel: "نوع المعاملة", publicOption: "معاملة عادية",
+      shieldOption: "معاملة محمية توضيحياً", run: "محاكاة المعاملة ↗",
+      localNote: "عرض محلي فقط. لا توجد محفظة أو شبكة أو اتصال بالبلوكشين.",
+      outputTag: "نتيجة المحاكاة", resultTitle: "مدى ظهور بيانات المعاملة",
+      waiting: "بانتظار المحاكاة", waitingDesc: "أدخل بيانات المعاملة ثم اضغط على زر المحاكاة.",
+      publicTitle: "معاملة عادية", shieldTitle: "معاملة محمية توضيحياً",
+      amount: "مبلغ التحويل", recipient: "المستلم", sender: "المرسل",
+      contract: "العقد المستهدف", gas: "نمط استهلاك الغاز التوضيحي",
+      visible: "بيانات وصفية قد تظل ظاهرة", protected: "مدخلات محمية من الناحية المفاهيمية",
+      publicExplanation: "في هذا المثال التوضيحي، نفترض أن مدخلات المعاملة العادية قابلة للرصد العام.",
+      shieldExplanation: "في هذا المثال، نفترض أن المبلغ والمستلم مدخلات محمية. لا يعني ذلك أن جميع بيانات معاملات Seismic مخفية.",
+      warning: "مهم: قد يظل عنوان المرسل والعقد المستهدف واستهلاك الغاز والتوقيت وبيانات وصفية أخرى قابلة للرصد. يعتمد السلوك الفعلي على البروتوكول ومسار المعاملة.",
+      invalid: "يرجى إدخال مبلغ موجب صالح وعنوان مستلم.",
+      fictional: "قيمة خيالية للتوضيح", notMeasured: "غير مقاس — قيمة توضيحية فقط"
+    }
+  };
+
+  const $ = id => document.getElementById(id);
+  function currentLanguage() { return lang === "ar" ? "ar" : "en"; }
+
+  function updateLabels() {
+    const t = words[currentLanguage()];
+    document.querySelectorAll("[data-sim]").forEach(el => {
+      const key = el.dataset.sim;
+      if (Object.prototype.hasOwnProperty.call(t, key)) el.textContent = t[key];
+    });
+  }
+
+  function item(label, value, type) {
+    const box = document.createElement("div");
+    box.className = "tx-item";
+    const small = document.createElement("small");
+    small.textContent = label;
+    const strong = document.createElement("strong");
+    strong.className = type || "";
+    strong.textContent = value;
+    box.append(small, strong);
+    return box;
+  }
+
+  function simulate() {
+    const t = words[currentLanguage()];
+    const amount = Number($("txAmount").value);
+    const recipient = $("txRecipient").value.trim();
+    const output = $("txOutput");
+    output.replaceChildren();
+
+    if (!Number.isFinite(amount) || amount <= 0 || amount > 1000000 || !recipient) {
+      output.append(item(t.resultTitle, t.invalid, "tx-visible"));
+      return;
+    }
+
+    const shielded = $("txMode").value === "shielded";
+    output.append(item(t.resultTitle, shielded ? t.shieldTitle : t.publicTitle));
+
+    if (shielded) {
+      output.append(
+        item(t.protected, t.amount + ": " + t.fictional, "tx-protected"),
+        item(t.protected, t.recipient + ": " + t.fictional, "tx-protected"),
+        item(t.visible, t.sender + ": 0xDEMO...91F2", "tx-visible")
+      );
+    } else {
+      output.append(
+        item(t.visible, t.amount + ": " + amount.toLocaleString(), "tx-visible"),
+        item(t.visible, t.recipient + ": " + recipient, "tx-visible"),
+        item(t.visible, t.sender + ": 0xDEMO...91F2", "tx-visible")
+      );
+    }
+
+    output.append(
+      item(t.contract, "0xDEMO...CONTRACT", "tx-visible"),
+      item(t.gas, t.notMeasured),
+      item(t.visible, shielded ? t.shieldExplanation : t.publicExplanation, "tx-visible"),
+      item("⚠", t.warning, "tx-visible")
+    );
+  }
+
+  $("txRun").addEventListener("click", simulate);
+  // The site's existing language handler runs first and updates `lang`.
+  $("langBtn").addEventListener("click", () => {
+    updateLabels();
+    const t = words[currentLanguage()];
+    $("txOutput").replaceChildren(item(t.waiting, t.waitingDesc));
+  });
+  updateLabels();
+})();
+</script>
+</body></html>
